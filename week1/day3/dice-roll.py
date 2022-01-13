@@ -1,4 +1,4 @@
- import random
+import random
 
 print("Let's roll a dice")
 
