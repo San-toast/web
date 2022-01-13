@@ -16,3 +16,5 @@ for student in listOfStudents:
 
 for letter in "santos":
     print(letter)
+
+message = "Joe is awesome"
