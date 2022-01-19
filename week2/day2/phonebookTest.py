@@ -1,14 +1,15 @@
-phoneBook = []
+phoneBook = [
+    {"name": "SANTOS" ,"phoneNumber": "888-123-1231"}
+]
 def phoneSearch():
     if len(phoneBook) == 0:
         print("No entries in phonebook")
     else:
         nameSearch = input ("Which user would you like to lookup? \n")
         userInPhoneBook = [entry for entry in phoneBook if entry["name"] == nameSearch.upper()]
-        if len(phoneBook) > 0:
+        if len(userInPhoneBook) > 0:
             print("Found entry for", nameSearch.upper(), ":", userInPhoneBook[0]["phoneNumber"])
         else:
-            notExist = nameSearch
             print(nameSearch, "does not exist")
             return
 
@@ -22,14 +23,15 @@ def phoneAdd():
 def phoneDelete():
     if len(phoneBook) == 0:
         print("No entries in phonebook")
+        return
     else:
         nameToDelete = input ("Which user would you like to delete? \n")
         userInPhoneBook = [entry for entry in phoneBook if entry["name"] == nameToDelete.upper()]
-        if len(phoneBook) > 0:
+       
+        if len(userInPhoneBook) > 0:
             print("Removed", nameToDelete.upper())
             phoneBook.remove(userInPhoneBook[0])
-        else:
-            notExist = nameToDelete
+        else:          
             print(nameToDelete, "does not exist")
             return
 
@@ -54,15 +56,15 @@ What do you want to do (1-5)?\n"""))
     if userInput == 1:
         phoneSearch()
    
-    elif userInput == 2:
+    if userInput == 2:
         phoneAdd()
     
-    elif userInput == 3:
+    if userInput == 3:
         phoneDelete()
 
-    elif userInput == 4:
+    if userInput == 4:
         phoneList()
    
-    elif userInput == 5:
+    if userInput == 5:
         print ("Goodbye")
         break
