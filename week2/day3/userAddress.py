@@ -11,10 +11,6 @@ class User:
         for add in self.address: 
             print(add.street, add.city, add.state, add.zip_code)
 
-    def display_address(self):
-        for add in self.address: 
-            print(add.street, add.city, add.state, add.zip_code)
-
 class Address:
     def __init__(self,street,city,state,zip_code):
         self.street = street

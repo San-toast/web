@@ -1,59 +1,105 @@
-class UserList:
-    def __init__(self, title, address, groceryList=[]):
-        self.title = title
+class NewList:
+    def __init__(self, store, address, groceryList = []):
+        self.store = store
         self.address = address
         self.groceryList = groceryList
-
-    def addList(self, title, address):
-        self.groceryList = {"title": title , "address":address}
-        self.groceryList.append(self.groceryList)
-        print(title, "added to grocery list with address:", address)
-        
-    def addItem(self,groceryList):
-        self.groceryList.append(groceryList)
-
-    def displayList(self):
-        for add in self.groceryList:
-            print(add.item, add.price ,add.quantity)
-
+    
 class Grocery:
-    def __init__(self,item,price,quantity):
-        self.item = item
+    def __init__(self, name, price, quantity):
+        self.name = name
         self.price = price
         self.quantity = quantity
 
-storeTest = UserList ("Foodland", "Keaau")
-testItems= Grocery("Eggs", 5, 2)
-storeTest.addItem(testItems)
-storeTest.displayList()
+# Prints all lists (stores and items)
+def printAllLists():
+    if len(shoppingLists) > 0:
+        for list in shoppingLists:
+            print(f"""
+    Grocery List For {list.store} at {list.address} :
+         """)
+            counter = 1
+            for item in list.groceryList:
+                print(f"""
+    {counter}.{item.name} {item.price} ({item.quantity})
+                 """) 
+                counter += 1
+
+    else:
+        print("No lists yet")
+
+# Prints stores
+def displayLists(allLists):
+    print ("Grocery Lists:")
+    counter = 1
+    for list in allLists:
+        print(f""" 
+    {counter}. {list.store} at {list.address}
+            """)
+        counter += 1
+
+# Prints the store that was selected, and the item(s) added
+def printCurrentList(currentList):
+
+    print(f"Grocery List For {currentList.store.capitalize()} :")
+    counter = 1
+    for item in currentList.groceryList:
+        print(f"""
+    {counter}. {item.name} {item.price} ({item.quantity})
+            """)
+        counter += 1 
+
+# Creates a new list for the store the user inputs
+def addList():
+    storeInput = input("Enter the name of the grocery store\n")
+    addressInput = input("Enter the location of this store \n")
+    
+    createStore = NewList(storeInput, addressInput)
+    shoppingLists.append(createStore)   
+    
+    print(f"New grocery list created for {storeInput}.")
+
+# User creates a grocery item and adds it to their shopping list
+def addGrocery(currentList):
+    groceryItem = input("Enter the name of the item ")
+    groceryPrice= input("What is the price of the item? \n")
+    groceryQuantity = input("How many do you need? ") 
+    
+    newGrocery = Grocery (groceryItem, groceryPrice, groceryQuantity)
+    currentList.groceryList = currentList.groceryList + [newGrocery]
 
 
-
-def storeAdd():
-    store1= UserList("Foodland", "132 Volcano st")
-    store2= UserList("KTA", "555 Puainako")
-    storeName = int(input("Select a store"))
-    if storeName == 1:
-        store1.addList()
-
-    if storeName == 2:
-        store2.addList()
+shoppingLists = []
 
 
 while True:
-    userInput = int(input("""
-Grocery List App
-=====================
-1. Look up an entry
-2. Add a new entry
-3. Delete an entry
-4. List all entries
-5. Quit
-=====================
-What do you want to do (1-5)?\n"""))
-    if userInput == 1:
-        storeAdd()
+    userChoice = input("""
+    Grocery List App
+    =================
+    1. Look at my lists
+    2. Make a new list
+    3. Add item to a list
+    0. Quit
+    =================
+    What do you want to do? (pick a number)
+    """)
 
-    else:
-        print("Goodbye")
-
+    userChoice = int(userChoice)
+    if userChoice == 1:
+            printAllLists()
+    elif userChoice == 2:
+            addList()
+        
+    elif userChoice == 3:
+        displayLists(shoppingLists)
+        
+        chooseList = int(input ("Which grocery list do you want to add an item to? (pick a number)"))
+        
+        currentList = shoppingLists[chooseList - 1]
+        printCurrentList(currentList)
+        addGrocery(currentList)
+        printCurrentList(currentList)
+        
+        
+    elif userChoice == 0:
+        print("Goodbye O/")
+        break
