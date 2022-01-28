@@ -26,9 +26,10 @@ class Hero:
         if self.coins <= 99:
             print("You don't have enough gold to do this")
         else:
-            print("Your sword feels stronger")
+            print("You feel stronger")
             self.strength += 5
             self.coins  -= 100
+            print(f"Strength: {self.strength}")
 
     def upgradeHealth(self, health, coins):
         if self.coins <= 99:
@@ -312,7 +313,7 @@ def croissantFight():
             userChoice = int(input(f"""
 
 
-                   HP  {croissant.health} 
+                        HP  {croissant.health} 
 
      ____                                    ?~~bL
     z@~ b                                    |  `U,
@@ -327,7 +328,7 @@ def croissantFight():
        "~@@@'  ]@@@'        __      )@n@bza@-"
          `-@zzz@@@L        )@@z     ]@@=%-"
            "~~@@@@@bz_    _a@@@@z___a@K
-               "~-@@@@@@@@@@@@@@@@@@~"   jrd
+               "~-@@@@@@@@@@@@@@@@@@~"  
                   `~~~-@~~-@@~~~~~'
                 
                    {croissant.name}
@@ -351,7 +352,7 @@ def croissantFight():
             createdHero.attack(croissant, createdHero.strength)
             if croissant.health > 0:
 
-                print(croissant.name, "slaps ", heroName)
+                print(croissant.name, "slaps", heroName)
                 croissant.attack(createdHero, croissant.strength)
                 
             else:
@@ -483,7 +484,7 @@ def store():
             {heroName}                             HP {createdHero.health}
             ******************************************
             *                                        *
-            *   1. Upgrade sword (100 Gold)          *
+            *   1. Upgrade Strength (100 Gold)       *
             *                                        *  
             *   2. Upgrade Health (100 Gold)         *
             *                                        *
