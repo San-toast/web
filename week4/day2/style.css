@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.myfavfood {
+  height: 300px;
+  background-color: saddlebrown;
+}
+
+img {
+  height: 75%;
+}
+
+h1 {
+  color: rgb(122, 46, 37);
+  font-family: cursive;
+}
+
+.innerDiv {
+  color: silver;
+  text-align: center;
+  height: 100%;
+  font-family: "Courier New", Courier, monospace;
+}
