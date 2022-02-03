@@ -6,6 +6,7 @@ body {
 .myfavfood {
   height: 300px;
   background-color: saddlebrown;
+  font-family: "Inconsolata", monospace;
 }
 
 img {

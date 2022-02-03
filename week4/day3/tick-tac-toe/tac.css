@@ -1,0 +1,11 @@
+.board {
+  display: inline-grid;
+  grid-template-columns: 50px 50px 50px;
+}
+
+.square {
+  background-color: white;
+  border: 3px solid black;
+  height: 50px;
+  width: 50px;
+}

@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wordContainer {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: 300px 1fr;
+  column-gap: 20px;
+  grid-template-rows: auto;
+  row-gap: 40px;
+  /* gap: 40px */
+}
+
+.word {
+  background: rgb(3, 213, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(3, 213, 217, 1) 0%,
+    rgba(191, 88, 172, 0.4023984593837535) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.layout {
+  display: grid;
+  grid-template-areas:
+    " header header header header"
+    "sidebar body body body"
+    "sidebar footer footer footer";
+  gap: 10px;
+  padding: 10px;
+}
+
+.header {
+  background-color: turquoise;
+  grid-area: header;
+  height: 50px;
+}
+.footer {
+  height: 40px;
+  grid-area: footer;
+  background-color: thistle;
+}
+.body {
+  height: 200px;
+  width: 100%;
+  background-color: violet;
+  grid-area: body;
+}
+
+.sidebar {
+  background-color: yellow;
+  grid-area: sidebar;
+}

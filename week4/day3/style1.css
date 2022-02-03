@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "aside nav nav"
+    "aside article article"
+    "footer footer footer";
+  gap: 10px;
+  padding: 10px;
+}
+
+.header {
+  width: 100%;
+  background-color: salmon;
+  grid-area: header;
+  height: 50px;
+}
+
+.aside {
+  background-color: orchid;
+  grid-area: aside;
+}
+
+.nav {
+  background-color: mediumturquoise;
+  grid-area: nav;
+}
+
+.body {
+  height: 100%;
+  width: 100%;
+  grid-area: body;
+}
+.article {
+  background-color: palegreen;
+  grid-area: article;
+}
+
+.footer {
+  background-color: wheat;
+  grid-area: footer;
+  height: 40px;
+}

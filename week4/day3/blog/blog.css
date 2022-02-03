@@ -1,0 +1,32 @@
+.main {
+  display: grid;
+  grid-template-areas: 1fr;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+}
+
+.article {
+}
+.header {
+  width: 1fr;
+  background-color: rgb(236, 235, 228);
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.headLinks {
+  display: flex;
+  background-color: rgb(236, 235, 228);
+  grid-column-start: 4;
+  list-style-type: none;
+}
+
+.extra {
+}
+
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: rgb(236, 235, 228);
+}
