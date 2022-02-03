@@ -1,0 +1,45 @@
+.desktop {
+  background-color: chocolate;
+}
+
+.tablet {
+  background-color: palegreen;
+}
+
+.phone {
+  background-color: lightcoral;
+}
+
+.mainContainer {
+  border: 3px solid red;
+  display: flex;
+  height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .mainContainer {
+    display: grid;
+    grid-template-rows: 200px 400px 300px 150px;
+    height: 100%;
+  }
+}
+
+/* desktop resolution */
+@media only screen and (max-width: 1280px) {
+  .desktop {
+    background-color: gray;
+  }
+}
+
+/* tablet resolution */
+@media only screen and (max-width: 1024px) {
+  .tablet {
+    background-color: purple;
+  }
+}
+
+/* phoneresolution */
+@media only screen and (max-width: 480px) {
+  .phone {
+    background-color: chartreuse;
+  }
+}

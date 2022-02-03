@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+}
+.box1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 200px;
+  background-color: crimson;
+}
+
+.box2 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 250px;
+  width: 200px;
+  background-color: cornflowerblue;
+}
+
+.box3 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 250px;
+  width: 200px;
+  background-color: yellow;
+}
