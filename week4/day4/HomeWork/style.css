@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  display: flex;
+  flex: 1;
+  column-gap: 10px;
+}
+.head {
+  display: flex;
+  background-color: aqua;
+  align-items: center;
+  justify-content: center;
+}
+
+.column1 {
+  order: 1;
+  align-items: stretch;
+  width: 300px;
+  background-color: crimson;
+}
+
+.column2 {
+  background-color: darkmagenta;
+  order: 2;
+  width: 100%;
+  height: 400px;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+
+  margin-bottom: auto;
+}
