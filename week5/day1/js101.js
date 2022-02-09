@@ -102,34 +102,38 @@ console.log(printBox(5, 5));
 function leetSpeak(word) {
   let leet = "";
   for (let index = 0; index < word.length; index++) {
+    let leetTemp = "";
     if (word.charAt(index) === "A") {
-      let leet = leet + "4";
+      let leet = leetTemp + "4";
       console.log(leet);
     } else if (word.charAt(index) === "E") {
-      let leet = leet + "3";
+      let leet = leetTemp + "3";
       console.log(leet);
     } else if (word.charAt(index) === "G") {
-      let leet = leet + "6";
+      let leet = leetTemp + "6";
       console.log(leet);
     } else if (word.charAt(index) === "I") {
-      let leet = leet + "1";
+      let leet = leetTemp + "1";
       console.log(leet);
     } else if (word.charAt(index) === "O") {
-      let leet = leet + "0";
+      let leet = leetTemp + "0";
       console.log(leet);
     } else if (word.charAt(index) === "S") {
-      let leet = leet + "5";
+      let leet = leetTemp + "5";
       console.log(leet);
     } else if (word.charAt(index) === "T") {
-      let leet = leet + "7";
+      let leet = leetTemp + "7";
       console.log(leet);
     } else {
-      let leet = leet + word.charAt(index);
+      let leet = leetTemp + word.charAt(index);
       console.log(word.charAt(index));
     }
   }
-  console.log(leet);
 }
-let theWord = "ELLO";
+let theWord = "HELLO";
 
 console.log(leetSpeak(theWord));
+
+// long-vowels
+
+function longVowels(word) {}
