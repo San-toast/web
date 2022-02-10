@@ -1,0 +1,31 @@
+h1 {
+  color: blue;
+}
+
+.card {
+  border: solid 2px black;
+  height: 200px;
+  width: 170px;
+}
+
+.actualCards {
+  display: flex;
+  justify-content: center;
+  border: solid 2px black;
+  height: 100px;
+  width: 100px;
+}
+
+.Hearts,
+.Spades,
+.Clubs,
+.Diamonds {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-auto-rows: auto;
+}
+
+.suit-header {
+  grid-column: span 4;
+}
