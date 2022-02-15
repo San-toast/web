@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  background-color: rgb(20, 19, 19);
+  color: #969494;
+  font-family: "Comfortaa", Arial, sans-serif;
+  grid-template-rows: 400px;
+  grid-template-columns: 200px;
+  width: 300px;
+  height: 70%;
+  grid-template-areas:
+    "poster poster"
+    "title year"
+    "info info"
+    "sum sum"
+    "plot plot";
+}
+
+.title {
+  color: white;
+  padding-left: 20px;
+  padding-top: 30px;
+  grid-area: title;
+  margin-bottom: 0%;
+}
+.poster {
+  grid-area: poster;
+}
+.year {
+  padding-top: 30px;
+  grid-area: year;
+}
+.info {
+  font-size: small;
+  grid-area: info;
+  padding-left: 20px;
+  margin-top: 0%;
+  padding-bottom: 20px;
+}
+.plot {
+  margin-top: 0%;
+  padding-left: 20px;
+  grid-area: plot;
+}
+.summary {
+  color: white;
+  margin-top: 0%;
+  padding-left: 20px;
+  grid-area: sum;
+  margin-bottom: 3%;
+}
