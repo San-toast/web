@@ -26,6 +26,7 @@
   grid-area: poster;
 }
 .year {
+  color: white;
   padding-top: 30px;
   grid-area: year;
 }
