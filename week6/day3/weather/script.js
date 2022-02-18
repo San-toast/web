@@ -51,11 +51,15 @@ const searchWeather = async () => {
   mainCard.append(foreContainer);
 
   for (const day of forecastJson.daily.slice(0, 4)) {
-    const foreTemp = document.createElement("p");
-    foreTemp.className = "card-text";
-    foreTemp.innerText += day.temp.day + `\u00B0`;
-    console.log(day.temp.day);
+    const foreTemp = document.createElement("h5");
+    const foreIcon = document.createElement("img");
+    foreIcon.src = day.weather.map((a) => a.icon);
 
+    foreTemp.className = "card-text";
+    foreTemp.innerText +=
+      day.temp.day + `\u00B0` + " - " + day.weather.map((a) => a.description);
+    console.log(day.temp.day);
+    // foreContainer.append(foreIcon);
     foreContainer.append(foreTemp);
   }
 };
