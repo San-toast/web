@@ -1,7 +1,5 @@
 const client_id = "0fthim31xfwt3jihnhzg88nkje54t4";
 const client_secret = "6ru89t3ws8bhni4ikbr1w12md7opqc";
-const button = document.querySelector(".button");
-const input = document.querySelector("input");
 const mainBody = document.querySelector(".woo");
 
 //gets token
@@ -23,13 +21,14 @@ const getToken = async () => {
 };
 
 //gets game information
-const getGames = async () => {
+const getAbout = async () => {
   const token = await getToken();
   const result = await fetch(
     "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/games",
     {
       method: "POST",
-      body: `fields *; search "${input.value}";  limit 5;`,
+      body: `fields *; where id = (138950
+, 131999, 16, 21968, 7334);  limit 5;`,
       headers: { "Client-ID": client_id, Authorization: "Bearer " + token },
       data: "fields age_ratings,aggregated_rating,aggregated_rating_count,alternative_names,artworks,bundles,category,checksum,collection,cover,created_at,dlcs,expanded_games,expansions,external_games,first_release_date,follows,forks,franchise,franchises,game_engines,game_modes,genres,hypes,involved_companies,keywords,multiplayer_modes,name,parent_game,platforms,player_perspectives,ports,rating,rating_count,release_dates,remakes,remasters,screenshots,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos,websites;",
     }
@@ -85,12 +84,9 @@ const getCover = async (coverId) => {
     const testCover = document.createElement("img");
     testCover.src = cover.url;
     let text = cover.url;
-    let replace = text.replace("thumb", "cover_big");
+    let replace = text.replace("thumb", "logo_med");
     gameImage.src = replace;
     forCover.append(gameImage);
   }
 };
-button.addEventListener("click", () => {
-  getGames();
-  mainBody.innerHTML = "";
-});
+getAbout();
