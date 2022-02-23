@@ -41,7 +41,7 @@ const getGames = async () => {
   let coverId = [];
   for (const info of data) {
     coverId.push(info.cover);
-    const gameName = document.createElement("p");
+    const gameName = document.createElement("h3");
     const gameCover = document.createElement("div");
     gameCover.className = info.cover;
     gameCover.setAttribute("name", `${info.cover}`);
@@ -82,8 +82,13 @@ const getCover = async (coverId) => {
     const forCover = document.getElementById(forId);
     console.log(forCover);
     const gameImage = document.createElement("img");
-    gameImage.src = cover.url;
+    const testCover = document.createElement("img");
+    testCover.src = cover.url;
+    let text = cover.url;
+    let replace = text.replace("thumb", "cover_big");
+    gameImage.src = replace;
     forCover.append(gameImage);
+    // forCover.append(testCover);
   }
 };
 button.addEventListener("click", () => {

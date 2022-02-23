@@ -42,11 +42,15 @@ const getRandomGame = async () => {
   console.log(data);
   console.log(data.cover);
   let coverId = [];
+  let platformId = [];
   for (const info of data) {
+    platformId.push(info.platforms);
     coverId.push(info.cover);
     const gameName = document.createElement("h1");
     const gameSummary = document.createElement("p");
     const gameCover = document.createElement("div");
+    const gameScore = document.createElement("h4");
+    gameScore.innerText = "Average Critic Score: " + parseInt(info.rating);
     gameCover.className = info.cover;
     gameCover.setAttribute("name", `${info.cover}`);
     gameCover.setAttribute("id", `${info.cover}`);
@@ -55,11 +59,50 @@ const getRandomGame = async () => {
     gameName.innerText = info.name;
     randomDiv.append(gameName);
     randomDiv.append(gameCover);
+    randomDiv.append(gameScore);
     randomDiv.append(gameSummary);
   }
+  console.log(platformId);
   console.log(coverId);
   await getCover(coverId);
+  await getPlatforms(platformId);
 };
+
+// GETS PLATFORMS
+const getPlatforms = async (platformId) => {
+  let query = "";
+  for (const iterator of platformId) {
+    query = query + iterator + ",";
+  }
+  let str = query.replace(/,\s*$/, "");
+
+  console.log(str);
+  const token = await getToken();
+  const result = await fetch(
+    "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/platforms",
+    {
+      method: "POST",
+      body: `fields *; where id = (${str});  limit 10;`,
+      headers: {
+        "Client-ID": client_id,
+        Authorization: "Bearer " + token,
+      },
+      data: "fields abbreviation,alternative_name,category,checksum,created_at,generation,name,platform_family,platform_logo,slug,summary,updated_at,url,versions,websites;",
+    }
+  );
+  const platformData = await result.json();
+  console.log(platformData);
+  for (const platform of platformData) {
+    console.log(platform.name);
+
+    const gamePlatform = document.createElement("h4");
+
+    gamePlatform.innerText = platform.name;
+    randomDiv.append(gamePlatform);
+  }
+};
+
+//GETS COVER
 const getCover = async (coverId) => {
   let query = "";
   for (const iterator of coverId) {
@@ -87,7 +130,6 @@ const getCover = async (coverId) => {
     const forCover = document.getElementById(forId);
     console.log(forCover);
     const gameImage = document.createElement("img");
-    // gameImage.src = cover.url;
     console.log(cover.url);
     let text = cover.url;
     let replace = text.replace("thumb", "cover_big");
