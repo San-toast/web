@@ -1,7 +1,6 @@
 const client_id = "0fthim31xfwt3jihnhzg88nkje54t4";
 const client_secret = "6ru89t3ws8bhni4ikbr1w12md7opqc";
-const mainBody = document.querySelector(".woo");
-
+const mainBody = document.querySelector(".woo1");
 //gets token
 const getToken = async () => {
   const result = await fetch(
@@ -40,13 +39,16 @@ const getRecent = async () => {
   for (const info of data) {
     coverId.push(info.cover);
     const gameCover = document.createElement("div");
+    const gameSummary = document.createElement("p");
     gameCover.className = info.cover;
+    gameSummary.innerText = info.summary;
     gameCover.setAttribute("name", `${info.name}`);
     gameCover.setAttribute("id", `${info.cover}`);
     gameCover.className = "card";
+    gameSummary.className = "summary";
 
-    // mainBody.append(gameName);
     mainBody.append(gameCover);
+    mainBody.append(gameSummary);
   }
   console.log(coverId);
   await getCover(coverId);

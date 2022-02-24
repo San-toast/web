@@ -7,17 +7,8 @@ body {
 img {
   object-fit: cover;
   border-radius: 12px;
-  height: 214px;
 }
-.container {
-  max-width: 179px;
 
-  /* Center the container in middle on horizontal axis */
-  margin: 0 auto;
-
-  /* Add empty space above the container (20% of the view height) */
-  margin-top: 20vh;
-}
 .randomDiv {
   max-width: 500px;
 
@@ -26,9 +17,6 @@ img {
 
   /* Add empty space above the container (20% of the view height) */
   margin-top: 10vh;
-}
-.card,
-.randomDiv {
   /* Change background color */
   background-color: white;
 
@@ -84,4 +72,66 @@ img {
 .refresh:hover {
   background-color: #6b8490;
   color: black;
+}
+
+.container1 {
+  display: flex;
+  max-width: 45%;
+
+  /* Center the container in middle on horizontal axis */
+  margin: 0 auto;
+
+  /* Add empty space above the container (20% of the view height) */
+  margin-top: 5vh;
+}
+
+.summary {
+  /* Change background color */
+  background-color: white;
+
+  /* Add border */
+  border: 1px solid #bacdd8;
+
+  /* Add space between the border and the content */
+  padding: 8px;
+
+  border-radius: 12px;
+  margin-top: 0%;
+  width: 45%;
+}
+
+.card {
+  /* Change background color */
+  background-color: white;
+
+  /* Add border */
+  border: 1px solid #bacdd8;
+
+  /* Add space between the border and the content */
+  padding: 8px;
+  width: 45%;
+  border-radius: 12px;
+}
+@media (max-width: 500px) {
+  .container1 {
+    grid-template-columns: auto;
+    width: auto;
+  }
+  img {
+    width: auto;
+  }
+
+  .summary,
+  .card {
+    /* Change background color */
+    background-color: white;
+
+    /* Add border */
+    border: 1px solid #bacdd8;
+
+    /* Add space between the border and the content */
+    padding: 8px;
+    width: 100%;
+    border-radius: 12px;
+  }
 }

@@ -42,15 +42,17 @@ const getGames = async () => {
   let coverId = [];
   for (const info of data) {
     coverId.push(info.cover);
-    const gameName = document.createElement("h3");
     const gameCover = document.createElement("div");
+    const gameSummary = document.createElement("p");
     gameCover.className = info.cover;
-    gameCover.setAttribute("name", `${info.cover}`);
+    gameSummary.innerText = info.summary;
+    gameCover.setAttribute("name", `${info.name}`);
     gameCover.setAttribute("id", `${info.cover}`);
+    gameCover.className = "card";
+    gameSummary.className = "summary";
 
-    gameName.innerText = info.name;
-    mainBody.append(gameName);
     mainBody.append(gameCover);
+    mainBody.append(gameSummary);
   }
   console.log(coverId);
   await getCover(coverId);
@@ -82,13 +84,20 @@ const getCover = async (coverId) => {
     const forId = cover.id;
     const forCover = document.getElementById(forId);
     console.log(forCover);
+    const cardName = forCover.getAttribute(`name`);
+    console.log(cardName);
     const gameImage = document.createElement("img");
-    const testCover = document.createElement("img");
-    testCover.src = cover.url;
+    const card = document.createElement("div");
+    const cardDetails = document.createElement("div");
+    cardDetails.innerText = cardName;
+    cardDetails.className = "name";
+
+    card.className = "card";
     let text = cover.url;
     let replace = text.replace("thumb", "cover_big");
     gameImage.src = replace;
     forCover.append(gameImage);
+    forCover.append(cardDetails);
   }
 };
 button.addEventListener("click", () => {
