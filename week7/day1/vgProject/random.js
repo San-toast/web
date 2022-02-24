@@ -1,7 +1,7 @@
 const client_id = "0fthim31xfwt3jihnhzg88nkje54t4";
 const client_secret = "6ru89t3ws8bhni4ikbr1w12md7opqc";
 const randomDiv = document.querySelector(".randomDiv");
-
+const refresh = document.querySelector(".refresh");
 let randomArray = [];
 const getRandomNumbers = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -137,4 +137,7 @@ const getCover = async (coverId) => {
     forCover.append(gameImage);
   }
 };
+refresh.addEventListener("click", () => {
+  window.location.reload();
+});
 getRandomGame();

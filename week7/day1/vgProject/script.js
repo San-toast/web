@@ -3,6 +3,7 @@ const client_secret = "6ru89t3ws8bhni4ikbr1w12md7opqc";
 const button = document.querySelector(".button");
 const input = document.querySelector("input");
 const mainBody = document.querySelector(".woo");
+const enter = document.querySelector("enter");
 
 //gets token
 const getToken = async () => {

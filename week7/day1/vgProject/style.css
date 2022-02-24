@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+body {
+  background-color: #e3e6e0;
+  font-family: "Raleway", sans-serif;
+}
+
+img {
+  object-fit: cover;
+  border-radius: 12px;
+  height: 214px;
+}
+.container {
+  max-width: 179px;
+
+  /* Center the container in middle on horizontal axis */
+  margin: 0 auto;
+
+  /* Add empty space above the container (20% of the view height) */
+  margin-top: 20vh;
+}
+.randomDiv {
+  max-width: 500px;
+
+  /* Center the container in middle on horizontal axis */
+  margin: 0 auto;
+
+  /* Add empty space above the container (20% of the view height) */
+  margin-top: 10vh;
+}
+.card,
+.randomDiv {
+  /* Change background color */
+  background-color: white;
+
+  /* Add border */
+  border: 1px solid #bacdd8;
+
+  /* Add space between the border and the content */
+  padding: 8px;
+
+  border-radius: 12px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+
+  margin-top: 16px;
+}
+
+.topnav {
+  background-color: #252930;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #6b8490;
+  color: black;
+}
+
+.middle {
+  text-align: center;
+}
+
+.refresh {
+  font-family: "Raleway", sans-serif;
+  background-color: #252930;
+  color: #f2f2f2;
+  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: 4px;
+  border: 1px solid #6b8490;
+}
+
+.refresh:hover {
+  background-color: #6b8490;
+  color: black;
+}
