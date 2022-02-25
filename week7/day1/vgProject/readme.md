@@ -5,7 +5,7 @@ This is a front end project that uses DOM manipulation, CSS, and an API to displ
 # How the API works
 
 The API requires the user to create and link an account from
-https://www.twitch.tv, then obtain a Client-ID and a Client-Secret to obtain a token which is used in the API. A better explanation and tutorial can be found at https://api-docs.igdb.com/. In order to fetch data from this API, a proxy server is needed in order to prevents a CORS error. The server used in this project was https://corsanywhere.herokuapp.com/
+https://www.twitch.tv, then obtain a Client ID and a Client Secret to obtain a token which is used in the API. A better explanation and tutorial can be found at https://api-docs.igdb.com/. In order to fetch data from this API, a proxy server is needed in order to prevents a CORS error. The server used in this project was https://corsanywhere.herokuapp.com/
 
 The information the user obtains depends on the url provided. For example, to obtain information about a game you would set up the code as:
 
