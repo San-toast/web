@@ -16,7 +16,7 @@ const getToken = async () => {
     }
   );
   const data = await result.json();
-  console.log(data);
+
   return data.access_token;
 };
 
@@ -35,8 +35,7 @@ const getAbout = async () => {
   );
 
   const data = await result.json();
-  console.log(data);
-  console.log(data.cover);
+
   let coverId = [];
   for (const info of data) {
     coverId.push(info.cover);
@@ -52,7 +51,7 @@ const getAbout = async () => {
     mainBody.append(gameCover);
     mainBody.append(gameSummary);
   }
-  console.log(coverId);
+
   await getCover(coverId);
 };
 //gets covers
@@ -63,7 +62,6 @@ const getCover = async (coverId) => {
   }
   let str = query.replace(/,\s*$/, "");
 
-  console.log(str);
   const token = await getToken();
   const result = await fetch(
     "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/covers",
@@ -77,13 +75,13 @@ const getCover = async (coverId) => {
     }
   );
   const coverData = await result.json();
-  console.log(coverData);
+
   for (const cover of coverData) {
     const forId = cover.id;
     const forCover = document.getElementById(forId);
-    console.log(forCover);
+
     const cardName = forCover.getAttribute(`name`);
-    console.log(cardName);
+
     const gameImage = document.createElement("img");
     const card = document.createElement("div");
     const cardDetails = document.createElement("div");

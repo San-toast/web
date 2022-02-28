@@ -41,6 +41,10 @@ img {
 .topnav {
   background-color: #252930;
   overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+  min-width: 400px;
 }
 
 .topnav a {

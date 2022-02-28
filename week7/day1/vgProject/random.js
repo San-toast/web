@@ -7,7 +7,6 @@ const getRandomNumbers = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 const randomNumber = getRandomNumbers(1, 25000);
-console.log(randomNumber);
 
 //gets token
 const getToken = async () => {
@@ -23,7 +22,7 @@ const getToken = async () => {
     }
   );
   const data = await result.json();
-  console.log(data);
+
   return data.access_token;
 };
 const getRandomGame = async () => {
@@ -39,8 +38,7 @@ const getRandomGame = async () => {
   );
 
   const data = await result.json();
-  console.log(data);
-  console.log(data.cover);
+
   let coverId = [];
   let platformId = [];
   for (const info of data) {
@@ -62,8 +60,7 @@ const getRandomGame = async () => {
     randomDiv.append(gameScore);
     randomDiv.append(gameSummary);
   }
-  console.log(platformId);
-  console.log(coverId);
+
   await getCover(coverId);
   await getPlatforms(platformId);
 };
@@ -76,7 +73,6 @@ const getPlatforms = async (platformId) => {
   }
   let str = query.replace(/,\s*$/, "");
 
-  console.log(str);
   const token = await getToken();
   const result = await fetch(
     "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/platforms",
@@ -91,10 +87,8 @@ const getPlatforms = async (platformId) => {
     }
   );
   const platformData = await result.json();
-  console.log(platformData);
-  for (const platform of platformData) {
-    console.log(platform.name);
 
+  for (const platform of platformData) {
     const gamePlatform = document.createElement("h4");
 
     gamePlatform.innerText = platform.name;
@@ -110,7 +104,6 @@ const getCover = async (coverId) => {
   }
   let str = query.replace(/,\s*$/, "");
 
-  console.log(str);
   const token = await getToken();
   const result = await fetch(
     "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/covers",
@@ -124,13 +117,13 @@ const getCover = async (coverId) => {
     }
   );
   const coverData = await result.json();
-  console.log(coverData);
+
   for (const cover of coverData) {
     const forId = cover.id;
     const forCover = document.getElementById(forId);
-    console.log(forCover);
+
     const gameImage = document.createElement("img");
-    console.log(cover.url);
+
     let text = cover.url;
     let replace = text.replace("thumb", "cover_big");
     gameImage.src = replace;
