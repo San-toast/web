@@ -1,13 +1,11 @@
+// console.log("Hello world, I am Node");
+
 const express = require("express");
 const app = express();
-const PORT = 3001;
+const PORT = 3002;
 
 app.get("/", (req, res) => {
-  res.send("hi");
-});
-
-app.post("/user_data", (req, res) => {
-  res.send("posting user data");
+  res.send("Hello World");
 });
 
 app.listen(PORT, console.log(`Listening on port http://localhost:${PORT}`));
