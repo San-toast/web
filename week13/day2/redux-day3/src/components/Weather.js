@@ -11,7 +11,7 @@ export default function Weather() {
       payload: e.target.value,
     });
   };
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${weather}&APPID=510e4ace9989c6737b365be9f9960d16&units=imperial`;
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${weather}&APPID=6&units=imperial`;
   const getWeather = async () => {
     const data = await fetch(url);
     const json = await data.json();
