@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  gap: 10px;
+}
