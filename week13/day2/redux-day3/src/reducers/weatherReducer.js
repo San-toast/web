@@ -1,9 +1,20 @@
-import { WEATHER } from "../action-types/index";
-const initialState = "";
+import { WEATHER, TEMP } from "../action-types/index";
+const initialState = {
+  city: "",
+  temperature: "",
+  key: "",
+};
 function weather(state = initialState, action) {
   switch (action.type) {
     case WEATHER:
-      return (state = action.payload);
+      return { ...state, key: action.payload };
+    case TEMP:
+      return {
+        ...state,
+        city: action.payload.city,
+        temperature: action.payload.temperature,
+        key: initialState.key,
+      };
     default:
       return state;
   }
