@@ -1,0 +1,23 @@
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  padding-left: 30px;
+}
+
+.navbarLinks {
+  display: flex;
+  width: 20%;
+  justify-content: space-evenly;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}

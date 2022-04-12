@@ -1,0 +1,30 @@
+.pContainer {
+  text-align: center;
+
+  height: auto;
+}
+.layoutContainer {
+  width: 100%;
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+}
+.productContainer {
+  background-color: whitesmoke;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border: 3px solid black;
+}
+
+.productImage {
+  height: 5rem;
+}
+.singleProduct {
+  margin: 10px 20px;
+  padding: 10px 20px;
+  width: 20rem;
+}
