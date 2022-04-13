@@ -1,14 +1,19 @@
 body {
   background-color: gainsboro;
 }
-.App,
-.notApp {
+.App {
   text-align: center;
-
-  height: auto;
+  background-image: url(https://images.unsplash.com/photo-1601397658360-3089ad6b16dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  height: 44em;
+  width: 100%;
+  margin-top: -21px;
+  background-color: gainsboro;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: 100% 50rem;
+  color: white;
 }
-.LayoutContainer,
-.cartLayout {
+.LayoutContainer {
   width: 100%;
   display: flex;
   margin-top: 3rem;
@@ -16,37 +21,32 @@ body {
   align-items: center;
   line-height: 1.5;
 }
-.productContainer {
-  background-color: whitesmoke;
-  width: 50%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  border: 3px solid black;
+
+a {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
 }
 
-.cart {
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.awards {
+  margin-top: 10px;
   display: flex;
+  font-size: 10px;
   justify-content: space-evenly;
-  flex-wrap: wrap;
-  background-color: whitesmoke;
-  width: 50%;
-  min-height: 29rem;
-  border: 3px solid black;
 }
-.productImage {
-  height: 5rem;
-}
-.singleProduct {
-  margin: 10px 20px;
-  padding: 10px 20px;
-  width: 20rem;
-}
-.cartProduct {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  height: 3rem;
-  margin: 10px 20px;
-  padding: 10px 20px;
+.award1,
+.award2,
+.award3 {
+  text-align: center;
 }

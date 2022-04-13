@@ -13,6 +13,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { PersistGate } from "redux-persist/integration/react";
 import ProductContainer from "./components/Products/ProductContainer";
+import Error from "./components/Error/Error";
 
 const persistConfig = {
   key: "root",
@@ -33,6 +34,7 @@ ReactDOM.render(
             <Route path="/" element={<App />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/products" element={<ProductContainer />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </BrowserRouter>
       </PersistGate>
