@@ -1,4 +1,5 @@
 .pContainer {
+  margin-top: 3rem;
   text-align: center;
 
   height: auto;
@@ -9,6 +10,7 @@
   margin-top: 3rem;
   justify-content: center;
   line-height: 1.5;
+  background-color: white;
 }
 .productContainer {
   background-color: whitesmoke;
@@ -23,6 +25,7 @@
 .productImage {
   height: 12rem;
   border-radius: 5%;
+  background-color: black;
 }
 .singleProduct {
   margin: 10px 20px;

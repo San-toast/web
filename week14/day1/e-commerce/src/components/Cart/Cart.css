@@ -2,17 +2,17 @@
   text-align: center;
 
   height: auto;
+  margin-top: 3rem;
 }
 .cartLayout {
   width: 100%;
-  display: flex;
   margin-top: 3rem;
+  display: flex;
   justify-content: center;
   align-items: center;
   line-height: 1.5;
 }
 .cart {
-  background-color: whitesmoke;
   width: 50%;
   display: flex;
   justify-content: space-evenly;
@@ -24,7 +24,12 @@
   border-radius: 5%;
 }
 .cartProduct {
+  display: flex;
+  justify-content: space-evenly;
   margin: 10px 20px;
   padding: 10px 20px;
   width: 29rem;
+  flex-grow: 1;
+  align-items: center;
+  background-color: whitesmoke;
 }

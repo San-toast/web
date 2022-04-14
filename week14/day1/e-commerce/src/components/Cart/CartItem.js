@@ -1,20 +1,32 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./Cart.css";
+import { REMOVE } from "../../action-types";
 
 export default function CartItem(props) {
   const dispatch = useDispatch();
   const removeFromCart = (dispatch, product) => {
-    dispatch({ type: "REMOVE", payload: product });
+    dispatch({ type: REMOVE, payload: product });
   };
   return (
     <div className="cartProduct">
-      <img className="productImage" src={props?.product?.img} alt="" />
-      <h4>{props?.product?.name}</h4>
-      <p>${props?.product?.price}</p>
-      <button onClick={() => removeFromCart(dispatch, props.product)}>
-        Remove
-      </button>
+      <div>
+        <img className="productImage" src={props?.product?.img} alt="" />
+      </div>
+
+      <div>
+        <h4>{props?.product?.name}</h4>
+      </div>
+
+      <div>
+        <p>${props?.product?.price}</p>
+      </div>
+
+      <div>
+        <button onClick={() => removeFromCart(dispatch, props.product)}>
+          Remove
+        </button>
+      </div>
     </div>
   );
 }

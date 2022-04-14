@@ -1,5 +1,6 @@
 body {
   background-color: gainsboro;
+  font-family: "Inconsolata", monospace;
 }
 .App {
   text-align: center;
@@ -14,8 +15,8 @@ body {
 }
 .LayoutContainer {
   text-align: center;
-  margin-left: 36%;
-  margin-right: 36%;
+  margin-left: 37%;
+  margin-right: 37%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 20rem;
