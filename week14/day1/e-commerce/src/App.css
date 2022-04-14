@@ -7,24 +7,26 @@ body {
   height: 44em;
   width: 100%;
   margin-top: -21px;
-  background-color: gainsboro;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: 100% 50rem;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .LayoutContainer {
-  width: 100%;
+  text-align: center;
+  margin-left: 36%;
+  margin-right: 36%;
   display: flex;
-  margin-top: 3rem;
+  flex-wrap: wrap;
+  margin-top: 20rem;
   justify-content: center;
   align-items: center;
-  line-height: 1.5;
+  background-color: black;
+  color: white;
 }
 
-a {
+.shop {
   background-color: black;
-  border: none;
   color: white;
   padding: 15px;
   text-align: center;

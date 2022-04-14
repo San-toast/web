@@ -2,9 +2,9 @@ import storage from "redux-persist/lib/storage";
 const initialState = {
   products: [
     {
-      name: "Screwdriver",
-      img: "https://images.unsplash.com/photo-1524224313114-ebd9c49dde82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      price: 3,
+      name: "Sleepy Chihuahua",
+      img: "https://images.unsplash.com/photo-1563743107569-a811ccb98cb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1676&q=80",
+      price: 30,
     },
     {
       name: "Hammer",
@@ -12,24 +12,34 @@ const initialState = {
       price: 5,
     },
     {
-      name: "Drill",
-      img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
+      name: "Bundle of Lychee",
+      img: "https://images.unsplash.com/photo-1591600986686-bf5f872d2e4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       price: 7,
     },
     {
-      name: "Drill Bit",
-      img: "https://images.unsplash.com/photo-1569338270981-4159a7818c13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+      name: "Gargoyle",
+      img: "https://images.unsplash.com/photo-1586275857380-e5da180ea8b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1048&q=80",
       price: 7,
     },
     {
-      name: "Tool Box",
-      img: "https://images.unsplash.com/photo-1585569695919-db237e7cc455?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      name: "Balut",
+      img: "https://vnd.vietnamdrive.com/wp-content/uploads/2022/01/vietnamese-balut-duck-egg.jpg",
       price: 7,
     },
     {
-      name: "Pliers",
-      img: "https://images.unsplash.com/photo-1586374579231-32db331d5b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      name: "Cursed Medallion",
+      img: "https://images.unsplash.com/photo-1633785584922-503ad0e982f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
       price: 7,
+    },
+    {
+      name: "Sailboat",
+      img: "https://images.unsplash.com/photo-1563296291-14f26f10c20f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      price: 100,
+    },
+    {
+      name: "Expired German Driver's License",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/DE_Licence_2013_Front.jpg/1920px-DE_Licence_2013_Front.jpg",
+      price: 2,
     },
   ],
   cart: [],

@@ -1,0 +1,18 @@
+.errorContainer {
+  text-align: center;
+  color: white;
+  height: 93.1vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+.err {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.hole {
+  margin-top: 5%;
+  background-image: url(enigma.jpg);
+  width: 304px;
+  height: 390px;
+}

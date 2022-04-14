@@ -1,11 +1,14 @@
 import React from "react";
-
+import "./Error.css";
 export default function Error() {
   return (
-    <div>
+    <div className="errorContainer">
       <h1>Sorry This Page Doesn't Exist</h1>
-      <h1>Please Consult the Ancient Mask to Return Home</h1>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Sutton_Hoo_helmet_2016.png/418px-Sutton_Hoo_helmet_2016.png"></img>
+
+      <div className="err">
+        <h1>Follow These Workers To Bring You Home</h1>
+        <a className="hole" href="/"></a>
+      </div>
     </div>
   );
 }

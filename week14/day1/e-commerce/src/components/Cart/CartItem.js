@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import "./Cart.css";
 
 export default function CartItem(props) {
   const dispatch = useDispatch();

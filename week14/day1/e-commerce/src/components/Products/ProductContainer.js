@@ -8,6 +8,7 @@ export default function ProductContainer() {
   console.log(products);
   return (
     <div className="pContainer">
+      <h1>Products</h1>
       <div className="layoutContainer">
         <div className="productContainer">
           {products?.map((product) => (

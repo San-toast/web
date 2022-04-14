@@ -12,22 +12,19 @@
   line-height: 1.5;
 }
 .cart {
+  background-color: whitesmoke;
+  width: 50%;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background-color: whitesmoke;
-  width: 50%;
-  min-height: 29rem;
-  border: 3px solid black;
+  margin-bottom: 50px;
 }
 .productImage {
   height: 5rem;
+  border-radius: 5%;
 }
 .cartProduct {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  height: 3rem;
   margin: 10px 20px;
   padding: 10px 20px;
+  width: 29rem;
 }
