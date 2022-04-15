@@ -212,3 +212,5 @@ const removeFromCart = (dispatch, product) => {
 
 <button onClick={() => removeFromCart(dispatch, props.product)}>Remove</button>;
 ```
+
+You can read a little bit more about this project <a href="https://dev.to/santoast/simple-react-e-commerce-store-2bel">here</a>

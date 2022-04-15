@@ -13,11 +13,18 @@
 
 .navbarLinks {
   display: flex;
-  width: 20%;
+  width: 50%;
   justify-content: space-evenly;
 }
 
 .link {
   text-decoration: none;
   color: white;
+}
+@media (min-width: 1200px) {
+  .navbarLinks {
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+  }
 }
