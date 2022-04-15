@@ -1,70 +1,214 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h1>Awesome Readme Template</h1>
+  
+  <p>
+    An awesome README template for your projects! 
+  </p>
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+<!-- Table of Contents -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [About the Project](#about-the-project)
+  - [Screenshots](#screenshots)
+  - [Tech Stack](#tech-stack)
+  - [Color Reference](#color-reference)
+- [Getting Started](#getting-started)
+  - [Run Locally](#run-locally)
+  - [Deployment](#deployment)
+- [Usage](#usage)
 
-### `npm test`
+<!-- About the Project -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About the Project
 
-### `npm run build`
+<!-- Screenshots -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="center"> 
+  <img src="./images/Home.PNG" alt="Home" />
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- TechStack -->
 
-### `npm run eject`
+### Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<details>
+  <summary>Technologies</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://react-redux.js.org/">React-Redux.js</a></li>
+    <li><a href="https://reactrouter.com/">React-Router</a></li>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  </ul>
+</details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- Color Reference -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Color Reference
 
-## Learn More
+| Color           | Hex                                                              |
+| --------------- | ---------------------------------------------------------------- |
+| Primary Color   | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #FFFFFF |
+| Secondary Color | ![#3B3A3A](https://via.placeholder.com/10/3B3A3A?text=+) #3B3A3A |
+| Other Color     | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- Getting Started -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started
 
-### Code Splitting
+<!-- Run Locally -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Run Locally
 
-### Analyzing the Bundle Size
+Clone the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Can be cloned from https://github.com/San-toast/web/tree/main/week14/day1/e-commerce
 
-### Making a Progressive Web App
+Go to the project directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+  cd e-commerce
+```
 
-### Advanced Configuration
+Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+  npm i
+```
+
+Start the server
+
+```bash
+  yarn start
+```
+
+<!-- Deployment -->
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To deploy this project run
 
-### `npm run build` fails to minify
+```bash
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- Usage -->
+
+## Usage
+
+This project shows off the use of react-router, redux, and persistant storage to create a simple online store.
+
+The index.js file requires many imports to get the application running.
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import Navbar from "./components/Navbar/Navbar";
+import Cart from "./components/Cart/Cart";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./reducers/rootReducer";
+import logger from "redux-logger";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { PersistGate } from "redux-persist/integration/react";
+import ProductContainer from "./components/Products/ProductContainer";
+import Error from "./components/Error/Error";
+```
+
+The persistant storage variables are setup below the imports
+
+```js
+const persistConfig = {
+  key: "root",
+  storage,
+};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = createStore(persistedReducer, applyMiddleware(logger));
+let persistor = persistStore(store);
+```
+
+Finallly the routes are setup as follows
+
+```js
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Navbar />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/products" element={<ProductContainer />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+```
+
+The rootReducer.js file contains the actions to alter some of the states
+
+```js
+function rootReducer(state = initialState, action) {
+  switch (action.type) {
+    case ADD_TO_CART:
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
+
+    case REMOVE:
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item !== action.payload),
+      };
+
+    default:
+      return state;
+  }
+}
+```
+
+Items are added to the cart with an onClick function setup in the Product.js component
+
+```js
+const dispatch = useDispatch();
+
+const addToCart = (dispatch, product) => {
+  dispatch({ type: ADD_TO_CART, payload: product });
+};
+
+<button
+  onClick={() => {
+    addToCart(dispatch, props.product);
+  }}
+>
+  Add to Cart
+</button>;
+```
+
+Items are removed from the cart with another onClick function in the CartItem.js component
+
+```js
+const dispatch = useDispatch();
+const removeFromCart = (dispatch, product) => {
+  dispatch({ type: REMOVE, payload: product });
+};
+
+<button onClick={() => removeFromCart(dispatch, props.product)}>Remove</button>;
+```

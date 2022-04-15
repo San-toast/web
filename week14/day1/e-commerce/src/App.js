@@ -4,10 +4,10 @@ function App() {
   return (
     <div>
       <div className="App">
-        <h1>Store Name</h1>
+        <h1>Francisco's</h1>
 
         <div className="LayoutContainer">
-          <h1>America's #9 Rated General Store*</h1>
+          <h1>America's #9 Rated General Store</h1>
           <a className="shop" href="/products">
             Shop Now
           </a>
@@ -19,14 +19,16 @@ function App() {
             alt=""
             src="https://upload.wikimedia.org/wikipedia/en/e/ed/Nobel_Prize.png"
           ></img>
-          <h1>Awarded for "Most Beneficial Store of Mankind"</h1>
+          <h1>
+            Nobel Peace Prize Awarded for "Most Beneficial Store of Mankind"
+          </h1>
         </div>
         <div className="award2">
           <img
             alt="Grammy"
             src="https://upload.wikimedia.org/wikipedia/en/7/7f/Academy_Award_trophy.png"
           ></img>
-          <h1>Awarded for "Best Visual Effects"</h1>
+          <h1>Oscar Awarded for "Best Visual Effects"</h1>
         </div>
         <div className="award3">
           <img
