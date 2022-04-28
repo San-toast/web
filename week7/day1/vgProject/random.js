@@ -28,7 +28,7 @@ const getToken = async () => {
 const getRandomGame = async () => {
   const token = await getToken();
   const result = await fetch(
-    "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/games",
+    "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/games",
     {
       method: "POST",
       body: `fields *; where id= ${randomNumber};  limit 10;`,
@@ -75,7 +75,7 @@ const getPlatforms = async (platformId) => {
 
   const token = await getToken();
   const result = await fetch(
-    "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/platforms",
+    "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/platforms",
     {
       method: "POST",
       body: `fields *; where id = (${str});  limit 10;`,
@@ -106,7 +106,7 @@ const getCover = async (coverId) => {
 
   const token = await getToken();
   const result = await fetch(
-    "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/covers",
+    "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/covers",
     {
       method: "POST",
       body: `fields *; where id = (${str});  limit 10;`,

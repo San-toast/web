@@ -27,7 +27,7 @@ const getToken = async () => {
 const getGames = async () => {
   const token = await getToken();
   const result = await fetch(
-    "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/games",
+    "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/games",
     {
       method: "POST",
       body: `fields *; search "${input.value}";  limit 5;`,
@@ -66,7 +66,7 @@ const getCover = async (coverId) => {
 
   const token = await getToken();
   const result = await fetch(
-    "https://corsanywhere.herokuapp.com/https://api.igdb.com/v4/covers",
+    "https://cors-anywhere.herokuapp.com/https://api.igdb.com/v4/covers",
     {
       method: "POST",
       body: `fields *; where id = (${str});  limit 10;`,

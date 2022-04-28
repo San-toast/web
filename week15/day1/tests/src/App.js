@@ -1,5 +1,6 @@
 import "./App.css";
 import Countdown from "react-countdown";
+import Images from "./Images";
 function App() {
   const Completionist = () => <span>You are good to go!</span>;
   const e = `May 3, 04:00:00 2022`;
@@ -14,6 +15,7 @@ function App() {
       <Countdown date={Date.now() + Math.abs(c)}>
         <Completionist />
       </Countdown>
+      <Images />
     </div>
   );
 }
